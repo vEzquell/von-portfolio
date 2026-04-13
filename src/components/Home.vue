@@ -44,6 +44,7 @@
             </button>
             
             <button 
+              @click="scrollToContact"
               class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 border border-white/30 hover:border-white/60 text-white text-sm sm:text-base font-medium rounded-2xl transition-all active:scale-95"
             >
               Get In Touch
@@ -66,5 +67,10 @@
 </template>
 
 <script setup>
-// You can add any interactivity here later (e.g. scroll animations with IntersectionObserver)
+const scrollToContact = () => {
+  const section = document.getElementById('contacts')
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>
