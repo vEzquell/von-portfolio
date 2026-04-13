@@ -14,11 +14,10 @@
 
                             <div class="flex items-center gap-3">
                                 <div class="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06] text-sm font-semibold tracking-[0.3em] text-white/80">
-                                    VP
+                                    VM
                                 </div>
                                 <div>
-                                    <p class="text-xs uppercase tracking-[0.35em] text-white/[0.45]">Portfolio</p>
-                                    <p class="text-sm font-medium text-white/[0.88]">Von Programmer</p>
+                                    <p class="text-sm font-medium text-white/[0.88]">Von Execquell Mauzar</p>
                                 </div>
                             </div>
 
