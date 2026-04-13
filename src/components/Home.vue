@@ -26,7 +26,7 @@
           
           <div class="space-y-1 mb-6 sm:mb-8">
             <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-white/90">Web Developer</h2>
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-white/90">Full-Stack Web Developer</h2>
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-white/90">Full-Stack Developer</h2>
           </div>
 
           <!-- Optional subtitle / tagline -->
