@@ -14,7 +14,7 @@
         <div class="space-y-5">
           <p class="text-xs uppercase tracking-[0.5em] text-white/40">Surigao City, Philippines</p>
           <h1 class="max-w-3xl text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
-            Dark, fast, and
+            Fast, and
             <span class="bg-gradient-to-r from-red-400 via-orange-300 to-white bg-clip-text text-transparent">intentional</span>
             web experiences.
           </h1>
