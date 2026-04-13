@@ -1,62 +1,72 @@
 <template>
-  <div class="w-full h-auto bg-[#1A1818] text-white py-10 sm:py-14 px-4 sm:px-6 flex flex-col items-center">
-    
-    <!-- Title Badge -->
-    <div class="inline-flex items-center gap-3 bg-[#2E2A2A] border border-white/10 rounded-3xl px-5 sm:px-8 py-3 mb-10 sm:mb-12">
-      <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-      <span class="text-sm sm:text-lg font-medium tracking-[0.2em] sm:tracking-widest">ABOUT ME</span>
-    </div>
+  <section class="section-shell relative rounded-[34px] px-4 py-12 sm:px-6 sm:py-14 md:px-8">
+    <div class="ambient-orb right-[-5rem] top-[-3rem] h-40 w-40 bg-red-500/[0.16]"></div>
 
-    <!-- Main Description -->
-    <div class="max-w-3xl text-center">
-      <p class="text-base sm:text-lg leading-relaxed text-white/80">
-        I am a passionate web developer who loves crafting functional, beautiful, 
-        and user-friendly web applications. I specialize in building efficient backend systems 
-        and responsive interfaces while constantly learning new technologies to elevate my craft.
-      </p>
-    </div>
-
-    <!-- Services Section -->
-    <div class="mt-12 sm:mt-20 w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10">
-      
-      <!-- Development Card -->
-      <div class="group bg-[#2E2A2A] border border-white/5 hover:border-white/20 rounded-3xl p-6 sm:p-10 transition-all duration-500 hover:-translate-y-2">
-        <div class="flex items-center gap-4 sm:gap-5 mb-5 sm:mb-6">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 bg-[#FF0000]/10 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110 shrink-0">
-            <img 
-              src="/images/development.png" 
-              alt="Development" 
-              class="w-8 h-8 sm:w-10 sm:h-10"
-            />
-          </div>
-          <h2 class="text-2xl sm:text-3xl font-semibold">Development</h2>
+    <div class="relative z-10">
+      <div class="mx-auto max-w-3xl text-center">
+        <div class="section-kicker mx-auto">
+          <span class="h-2 w-2 rounded-full bg-orange-400"></span>
+          About Me
         </div>
-        
-        <p class="text-sm sm:text-base text-white/70 leading-relaxed">
-          I can build websites tailored to your exact needs — from concept to completion. 
-          Whether starting from scratch or improving an existing idea, I’ll work closely with you throughout the process.
+        <h2 class="section-title mt-5">Building useful systems with a polished visual edge.</h2>
+        <p class="section-copy mx-auto mt-5 max-w-2xl">
+          I focus on interfaces that feel premium but stay practical underneath. My work blends responsive frontend design, structured backend thinking, and a strong preference for clean, maintainable implementation.
         </p>
       </div>
 
-      <!-- Maintenance Card -->
-      <div class="group bg-[#2E2A2A] border border-white/5 hover:border-white/20 rounded-3xl p-6 sm:p-10 transition-all duration-500 hover:-translate-y-2">
-        <div class="flex items-center gap-4 sm:gap-5 mb-5 sm:mb-6">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 bg-[#FF0000]/10 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110 shrink-0">
-            <img 
-              src="/images/maintenance.png" 
-              alt="Maintenance" 
-              class="w-8 h-8 sm:w-10 sm:h-10"
-            />
-          </div>
-          <h2 class="text-2xl sm:text-3xl font-semibold">Maintenance</h2>
-        </div>
-        
-        <p class="text-sm sm:text-base text-white/70 leading-relaxed">
-          Need fixes, updates, or ongoing support? I can maintain and improve your website, 
-          ensuring it stays fast, secure, and up-to-date. I’ll always keep you in the loop.
-        </p>
-      </div>
+      <div class="mt-10 grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
+        <div class="glass-panel rounded-[30px] p-6 sm:p-8">
+          <p class="text-xs uppercase tracking-[0.4em] text-white/[0.45]">Approach</p>
+          <p class="mt-4 text-base leading-8 text-white/[0.76]">
+            I enjoy taking rough ideas and turning them into focused products with clear hierarchy, elegant dark-mode styling, and interactions that feel smooth without becoming distracting. Whether it is a portfolio, admin interface, or business tool, I care about both the user experience and the engineering underneath it.
+          </p>
 
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <div v-for="pillar in pillars" :key="pillar.title" class="rounded-[22px] border border-white/10 bg-black/[0.22] px-4 py-4">
+              <p class="text-sm font-semibold text-white">{{ pillar.title }}</p>
+              <p class="mt-2 text-sm leading-6 text-white/[0.58]">{{ pillar.copy }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid gap-5">
+          <article v-for="service in services" :key="service.title" class="glass-panel group rounded-[30px] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/[0.16]">
+            <div class="flex items-start gap-4">
+              <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600/[0.18] to-orange-400/[0.16] ring-1 ring-white/10">
+                <img :src="service.icon" :alt="service.title" class="h-8 w-8 object-contain" />
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-[0.35em] text-white/40">{{ service.kicker }}</p>
+                <h3 class="mt-2 text-2xl font-semibold text-white">{{ service.title }}</h3>
+                <p class="mt-3 text-sm leading-7 text-white/[0.66]">{{ service.copy }}</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
+
+<script setup>
+const pillars = [
+  { title: 'Visual Clarity', copy: 'Readable layouts, strong contrast, and intentional spacing.' },
+  { title: 'Responsive UX', copy: 'Interfaces that hold up cleanly from phone to desktop.' },
+  { title: 'Reliable Builds', copy: 'Practical code that is easier to maintain and extend.' }
+]
+
+const services = [
+  {
+    kicker: 'Service 01',
+    title: 'Development',
+    copy: 'From initial concept to launch, I build websites and application interfaces that are fast, flexible, and aligned with your goals.',
+    icon: '/images/development.png'
+  },
+  {
+    kicker: 'Service 02',
+    title: 'Maintenance',
+    copy: 'I help improve existing projects with fixes, UI refinement, cleanup, and ongoing support so your product stays dependable.',
+    icon: '/images/maintenance.png'
+  }
+]
+</script>

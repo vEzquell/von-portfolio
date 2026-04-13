@@ -1,76 +1,98 @@
 <template>
-  <div class="relative w-full min-h-screen md:min-h-[600px] overflow-hidden bg-[#0a0a0a] flex items-center py-16 sm:py-20">
-    <!-- Background gradient overlay -->
-    <div class="absolute inset-0 bg-gradient-to-br from-violet-950/40 via-black to-black z-0"></div>
+  <section class="section-shell relative min-h-[calc(100vh-110px)] rounded-[34px] px-4 py-8 sm:px-6 md:px-8 lg:px-10">
+    <div class="ambient-orb left-[-4rem] top-10 h-44 w-44 bg-red-600/20"></div>
+    <div class="ambient-orb right-[-3rem] top-20 h-56 w-56 bg-orange-400/[0.14] [animation-delay:1.4s]"></div>
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.12),transparent_28%),linear-gradient(135deg,rgba(255,255,255,0.03),transparent_42%)]"></div>
 
-    <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center h-full relative z-10">
-      <!-- Left: Image -->
-      <div class="flex justify-center md:justify-end">
-        <div class="relative group">
-          <!-- Glow effect -->
-          
-          <img 
-            src="/images/me.png" 
-            alt="Von" 
-            class="w-[220px] sm:w-[280px] md:w-[380px] h-auto rounded-3xl shadow-2xl object-cover transition-transform duration-500 group-hover:scale-105 border border-white/10"
-          />
+    <div class="relative z-10 grid min-h-[calc(100vh-174px)] items-center gap-10 md:grid-cols-[1.15fr_0.85fr]">
+      <div class="order-2 space-y-8 text-center md:order-1 md:text-left">
+        <div class="section-kicker mx-auto md:mx-0">
+          <span class="h-2 w-2 rounded-full bg-red-500 shadow-[0_0_18px_rgba(239,68,68,0.7)]"></span>
+          Full-Stack Web Developer
         </div>
-      </div>
 
-      <!-- Right: Text Content -->
-      <div class="flex flex-col justify-center md:items-start items-center text-center md:text-left">
-        <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl w-full max-w-md">
-          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tighter mb-3">
-            Hi, I'm <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Von</span>
+        <div class="space-y-5">
+          <p class="text-xs uppercase tracking-[0.5em] text-white/40">Surigao City, Philippines</p>
+          <h1 class="max-w-3xl text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+            Dark, fast, and
+            <span class="bg-gradient-to-r from-red-400 via-orange-300 to-white bg-clip-text text-transparent">intentional</span>
+            web experiences.
           </h1>
-          
-          <div class="space-y-1 mb-6 sm:mb-8">
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-white/90">Web Developer</h2>
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-white/90">Full-Stack Developer</h2>
-          </div>
-
-          <!-- Optional subtitle / tagline -->
-          <p class="text-white/70 text-base sm:text-lg leading-relaxed">
-            Crafting beautiful, high-performance web experiences with clean code and modern design.
+          <p class="mx-auto max-w-2xl text-sm leading-7 text-white/[0.68] sm:text-base md:mx-0 lg:text-lg">
+            I design and build polished websites, admin systems, and server-backed products with a clean visual feel, thoughtful interactions, and reliable performance.
           </p>
-
-          <!-- Call to action buttons -->
-          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8 sm:mt-10">
-            <button 
-              class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-black text-sm sm:text-base font-semibold rounded-2xl hover:bg-white/90 transition-all active:scale-95 flex items-center justify-center gap-2"
-            >
-              View My Work
-              <span class="text-xl">→</span>
-            </button>
-            
-            <button 
-              @click="scrollToContact"
-              class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 border border-white/30 hover:border-white/60 text-white text-sm sm:text-base font-medium rounded-2xl transition-all active:scale-95"
-            >
-              Get In Touch
-            </button>
-          </div>
         </div>
 
-        <!-- Subtle social links or scroll indicator (optional) -->
-        <div class="mt-8 sm:mt-12 flex gap-6 text-white/40">
-          <!-- Add your social icons here if you want -->
+        <div class="flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center md:justify-start">
+          <button
+            @click="scrollToSection('tools')"
+            class="group inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-red-600 to-orange-500 px-6 py-3.5 text-sm font-semibold text-white shadow-[0_18px_45px_rgba(239,68,68,0.28)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(249,115,22,0.32)] sm:px-7 sm:text-base"
+          >
+            View My Work
+            <svg xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-300 group-hover:translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </button>
+
+          <button
+            @click="scrollToSection('contacts')"
+            class="inline-flex items-center justify-center gap-3 rounded-2xl border border-white/[0.12] bg-white/[0.03] px-6 py-3.5 text-sm font-medium text-white/90 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.06] sm:px-7 sm:text-base"
+          >
+            Get In Touch
+          </button>
+        </div>
+
+        <div class="grid gap-3 pt-2 sm:grid-cols-3">
+          <div v-for="stat in stats" :key="stat.label" class="glass-panel rounded-[22px] px-4 py-4 text-left">
+            <p class="text-2xl font-semibold text-white">{{ stat.value }}</p>
+            <p class="mt-1 text-xs uppercase tracking-[0.3em] text-white/[0.45]">{{ stat.label }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-1 flex justify-center md:order-2 md:justify-end">
+        <div class="relative w-full max-w-[460px]">
+          <div class="absolute inset-0 rounded-[34px] bg-gradient-to-br from-red-500/[0.24] via-transparent to-orange-400/[0.18] blur-2xl"></div>
+          <div class="glass-panel relative overflow-hidden rounded-[34px] border-white/[0.12] p-4 sm:p-5">
+            <div class="absolute inset-0 bg-[linear-gradient(140deg,rgba(255,255,255,0.12),transparent_35%,transparent_70%,rgba(255,255,255,0.08))]"></div>
+            <div class="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#0d0d0d]">
+              <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-red-500/[0.16] to-transparent"></div>
+              <img
+                src="/images/me.png"
+                alt="Von portrait"
+                class="relative z-10 aspect-[4/4.8] w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+              />
+            </div>
+
+            <div class="relative mt-4 grid gap-3 sm:grid-cols-2">
+              <div class="rounded-[22px] border border-white/10 bg-black/[0.22] px-4 py-4">
+                <p class="text-xs uppercase tracking-[0.3em] text-white/[0.45]">Focus</p>
+                <p class="mt-2 text-sm text-white/80">Frontend polish, backend structure, deployment stability.</p>
+              </div>
+              <div class="rounded-[22px] border border-white/10 bg-black/[0.22] px-4 py-4">
+                <p class="text-xs uppercase tracking-[0.3em] text-white/[0.45]">Style</p>
+                <p class="mt-2 text-sm text-white/80">Dark UI, rich contrast, subtle motion, clean hierarchy.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Optional decorative element -->
-    <div class="absolute bottom-10 right-10 hidden lg:block text-[120px] font-black text-white/5 select-none pointer-events-none">
-      VON
-    </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
-const scrollToContact = () => {
-  const section = document.getElementById('contacts')
+const stats = [
+  { value: '3+', label: 'Core Services' },
+  { value: '8', label: 'Main Tools' },
+  { value: '24/7', label: 'Build Mindset' }
+]
+
+const scrollToSection = (id) => {
+  const section = document.getElementById(id)
   if (section) {
-    section.scrollIntoView({ behavior: 'smooth' })
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 }
 </script>
