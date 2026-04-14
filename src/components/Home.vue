@@ -35,6 +35,19 @@
             </svg>
           </button>
 
+          <a
+            href="/resume/Von Resume.pdf"
+            download="Von-Resume.pdf"
+            class="inline-flex items-center justify-center gap-3 rounded-2xl border border-orange-400/30 bg-orange-500/10 px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:border-orange-300/50 hover:bg-orange-500/16 sm:px-7 sm:text-base"
+          >
+            Download Resume
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3v12" />
+              <path d="m7 10 5 5 5-5" />
+              <path d="M5 21h14" />
+            </svg>
+          </a>
+
           <button
             @click="scrollToSection('contacts')"
             class="inline-flex items-center justify-center gap-3 rounded-2xl border border-white/[0.12] bg-white/[0.03] px-6 py-3.5 text-sm font-medium text-white/90 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.06] sm:px-7 sm:text-base"
