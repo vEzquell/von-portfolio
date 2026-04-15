@@ -34,19 +34,19 @@
                         <div
                             v-for="(cert, index) in certificates"
                             :key="index"
-                            class="absolute inset-0 p-4 transition-all duration-700 ease-out sm:p-5"
-                            :class="currentIndex === index ? 'opacity-100 translate-x-0' : 'pointer-events-none opacity-0 translate-x-10'"
+                            class="p-4 transition-all duration-700 ease-out sm:p-5"
+                            :class="currentIndex === index ? 'relative opacity-100 translate-x-0' : 'pointer-events-none absolute inset-0 opacity-0 translate-x-10'"
                         >
-                            <div class="grid h-full gap-5 md:grid-cols-[1.1fr_0.9fr]">
+                            <div class="grid gap-5 md:grid-cols-[1.1fr_0.9fr]">
                                 <button
-                                    class="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[#0f0f0f] text-left"
+                                    class="group relative min-h-[320px] overflow-hidden rounded-[28px] border border-white/10 bg-[#0f0f0f] text-left sm:min-h-[380px] md:min-h-0"
                                     @click="openImage(cert.icon)"
                                 >
                                     <div class="absolute inset-0 bg-gradient-to-br from-red-500/[0.14] via-transparent to-orange-400/[0.12]"></div>
                                     <img
                                         :src="cert.icon"
                                         :alt="cert.name"
-                                        class="relative z-10 h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-[1.02] sm:p-6"
+                                        class="relative z-10 h-full w-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-[1.02] sm:p-6"
                                     />
                                 </button>
 
@@ -71,8 +71,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="pointer-events-none h-[430px] sm:h-[480px]"></div>
                     </div>
 
                     <button
@@ -98,7 +96,7 @@
                     </button>
                 </div>
 
-                <div class="mt-6 flex justify-center gap-3">
+                <div class="mt-6 flex justify-center items-center gap-3">
                     <button
                         v-for="(cert, index) in certificates"
                         :key="index"
