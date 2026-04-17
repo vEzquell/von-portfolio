@@ -74,31 +74,13 @@
               <div class="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#0d0d0d] shadow-[0_28px_80px_rgba(0,0,0,0.45)] transition duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateX(6deg)_rotateY(-8deg)]">
                 <div class="absolute inset-0 rounded-[28px] bg-[linear-gradient(135deg,rgba(255,255,255,0.18),transparent_26%,transparent_72%,rgba(249,115,22,0.18))]"></div>
                 <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-red-500/[0.16] to-transparent"></div>
-                <div class="absolute left-4 right-4 top-4 z-20 flex items-start justify-between rounded-2xl border border-white/10 bg-black/35 px-4 py-3 backdrop-blur-md [transform:translateZ(36px)]">
-                  <div>
-                    <p class="text-[10px] uppercase tracking-[0.38em] text-white/45">Portfolio ID</p>
-                    <p class="mt-2 text-lg font-semibold text-white">VON EXEQUIEL</p>
-                  </div>
-                  <div class="rounded-full border border-orange-400/30 bg-orange-500/12 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-orange-200">
-                    Active
-                  </div>
-                </div>
                 <img
                   src="/images/me.png"
                   alt="Von portrait"
                   class="relative z-10 aspect-[4/4.8] w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
                 />
                 <div class="absolute inset-y-10 left-5 w-10 rounded-full bg-white/10 blur-xl [transform:translateZ(42px)]"></div>
-                <div class="absolute bottom-4 left-4 right-4 z-20 flex items-end justify-between gap-4 rounded-2xl border border-white/10 bg-black/45 px-4 py-3 backdrop-blur-md [transform:translateZ(40px)]">
-                  <div>
-                    <p class="text-[10px] uppercase tracking-[0.35em] text-white/45">Role</p>
-                    <p class="mt-2 text-sm font-medium text-white/85">Full-Stack Web Developer</p>
-                  </div>
-                  <div class="text-right">
-                    <p class="text-[10px] uppercase tracking-[0.35em] text-white/45">Location</p>
-                    <p class="mt-2 text-sm font-medium text-white/85">Surigao City</p>
-                  </div>
-                </div>
+                
                 <div class="pointer-events-none absolute inset-0 z-30 bg-[linear-gradient(120deg,transparent_0%,transparent_38%,rgba(255,255,255,0.24)_50%,transparent_62%,transparent_100%)] opacity-0 transition duration-700 group-hover:translate-x-6 group-hover:opacity-100"></div>
               </div>
             </div>
